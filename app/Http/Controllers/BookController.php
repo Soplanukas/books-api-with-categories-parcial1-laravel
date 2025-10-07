@@ -12,7 +12,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        return Book::all();
+        return Book::with('category')->get();
     }
 
     /**
@@ -28,6 +28,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
+        $book->load('category');
         return $book;
     }
 

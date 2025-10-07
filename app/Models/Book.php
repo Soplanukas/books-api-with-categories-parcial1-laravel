@@ -17,5 +17,12 @@ class Book extends Model
         'book_price',
         'book_stock',
         'book_status',
+        'category_id',
+        'barcode',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id_category');
+    }
 }

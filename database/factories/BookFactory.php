@@ -22,6 +22,8 @@ class BookFactory extends Factory
             'book_price' => fake()->randomFloat(2, 5, 100),
             'book_stock' => fake()->numberBetween(0, 100),
             'book_status' => fake()->boolean(),
+            'category_id' => \App\Models\Category::factory(),
+            'barcode' => fake()->optional()->ean13(),
         ];
     }
 }
